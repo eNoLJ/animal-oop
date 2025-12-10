@@ -20,13 +20,18 @@ public class Lion {
     public void takeDamage(int damage) {
         hp -= damage;
         if (hp <= 0) {
-            System.out.println("사자가 쓰러졌습니다!");
+            System.out.println(this.name + "이(가) 쓰러졌습니다!");
             return;
         }
-        System.out.println("사자가 상처를 입었습니다.");
+        System.out.println(this.name + "이(가) 상처를 입었습니다.");
     }
 
     public void attack(Lion lion) {
+        System.out.println(this.name + "이(가) " + lion.getName() + "을(를) 공격했습니다.");
+        lion.takeDamage(attackPower);
+    }
+
+    public void biteStrongly(Lion lion) {
         int damage = attackPower;
 
         if (Math.random() < 0.3) {
