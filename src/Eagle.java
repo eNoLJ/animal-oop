@@ -1,4 +1,4 @@
-public class Eagle {
+public class Eagle implements Walk, Fly {
 
     private String name;
 
@@ -42,5 +42,15 @@ public class Eagle {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void fly() {
+        System.out.println(this.name + "이(가) 바람을 가르며 납니다.");
+    }
+
+    @Override
+    public void walk() {
+        System.out.println(this.name + "이(가) 바닥에서 걷습니다.");
     }
 }

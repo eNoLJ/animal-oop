@@ -1,4 +1,4 @@
-public class Lion {
+public class Lion implements Walk {
 
     private String name;
 
@@ -45,5 +45,10 @@ public class Lion {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void walk() {
+        System.out.println(this.name + "이(가) 어슬렁 어슬렁 걷습니다.");
     }
 }
