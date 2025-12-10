@@ -20,14 +20,14 @@ public abstract class Animal {
     public void takeDamage(int damage) {
         hp -= damage;
         if (hp <= 0) {
-            System.out.println(this.name + "이(가) 쓰러졌습니다!");
+            System.out.println(this.name + "(이)가 쓰러졌습니다!");
             return;
         }
-        System.out.println(this.name + "이(가) 상처를 입었습니다.");
+        System.out.println(this.name + "(이)가 상처를 입었습니다.");
     }
 
     public void attack(Animal animal) {
-        System.out.println(this.name + "이(가) " + animal.getName() + "을(를) 공격했습니다.");
+        System.out.println(this.name + "(이)가 " + animal.getName() + "(을)를 공격했습니다.");
         animal.takeDamage(attackPower);
     }
 
@@ -62,4 +62,12 @@ public abstract class Animal {
     public abstract void doEAction();
 
     public abstract void doRAction();
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", hp=" + hp +
+                '}';
+    }
 }

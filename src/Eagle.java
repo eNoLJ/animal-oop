@@ -9,22 +9,22 @@ public class Eagle extends Animal implements Walk, Fly {
 
     @Override
     public void doAAction() {
-        System.out.println(getName() + "이(가) 하늘 위에서 먹이를 찾습니다.");
+        System.out.println(getName() + "(이)가 하늘 위에서 먹이를 찾습니다.");
     }
 
     @Override
     public void doWAction() {
-        System.out.println(getName() + "이(가) 바람을 가르며 하늘을 납니다.");
+        System.out.println(getName() + "(이)가 바람을 가르며 하늘을 납니다.");
     }
 
     @Override
     public void doEAction() {
-        System.out.println(getName() + "이(가) 짹짹 웁니다.");
+        System.out.println(getName() + "(이)가 짹짹 웁니다.");
     }
 
     @Override
     public void doRAction() {
-        System.out.println(getName() + "이(가) 먹이를 쪼아 먹습니다.");
+        System.out.println(getName() + "(이)가 먹이를 쪼아 먹습니다.");
     }
 
     @Override
@@ -35,17 +35,27 @@ public class Eagle extends Animal implements Walk, Fly {
     }
 
     public void diveAttack(Animal animal) {
-        System.out.println(getName() + "이(가) " + animal.getName()+ "을(를) 하늘에서 내려찍었습니다.");
+        int damage = getAttackPower();
+
+        if (getDiveAttackChance() < 0.3) {
+            damage *= 2;
+        }
+
+        System.out.println(getName() + "(이)가 " + animal.getName()+ "(을)를 하늘에서 내려찍었습니다.");
         animal.takeDamage(getAttackPower());
+    }
+
+    public double getDiveAttackChance() {
+        return Math.random();
     }
 
     @Override
     public void fly() {
-        System.out.println(getName() + "이(가) 바람을 가르며 납니다.");
+        System.out.println(getName() + "(이)가 바람을 가르며 납니다.");
     }
 
     @Override
     public void walk() {
-        System.out.println(getName() + "이(가) 바닥에서 걷습니다.");
+        System.out.println(getName() + "(이)가 바닥에서 걷습니다.");
     }
 }
