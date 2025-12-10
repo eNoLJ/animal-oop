@@ -8,6 +8,26 @@ public class Turtle extends Animal implements Walk, Swim{
     }
 
     @Override
+    public void doAAction() {
+        System.out.println(getName() + "이(가) 두리번 두리번 먹이를 찾습니다.");
+    }
+
+    @Override
+    public void doWAction() {
+        System.out.println(getName() + "이(가) 엉금엉금 땅을 걷습니다.");
+    }
+
+    @Override
+    public void doEAction() {
+        System.out.println(getName() + "이(가) 짝을 찾아 돌아다닙니다.");
+    }
+
+    @Override
+    public void doRAction() {
+        System.out.println(getName() + "이(가) 먹이를 베어 먹습니다.");
+    }
+
+    @Override
     public void levelUp() {
         setHp(getHp() + 20);
         setAttackPower(getAttackPower() + 1);

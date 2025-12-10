@@ -54,4 +54,12 @@ public abstract class Animal {
     public void setAttackPower(int attackPower) {
         this.attackPower = attackPower;
     }
+
+    public abstract void doAAction();
+
+    public abstract void doWAction();
+
+    public abstract void doEAction();
+
+    public abstract void doRAction();
 }

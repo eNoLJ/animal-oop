@@ -4,6 +4,26 @@ public class Lion extends Animal implements Walk {
         super(name, hp, attackPower);
     }
 
+    @Override
+    public void doAAction() {
+        System.out.println(getName() + "이(가) 사나운 눈빛으로 먹이를 찾습니다.");
+    }
+
+    @Override
+    public void doWAction() {
+        System.out.println(getName() + "이(가) 초원을 달립니다.");
+    }
+
+    @Override
+    public void doEAction() {
+        System.out.println(getName() + "이(가) 어흥 어흥 포효합니다.");
+    }
+
+    @Override
+    public void doRAction() {
+        System.out.println(getName() + "이(가) 먹이를 뜯어 먹습니다.");
+    }
+
     public void biteStrongly(Animal animal) {
         int damage = getAttackPower();
 
