@@ -20,5 +20,12 @@ public class Main {
 
         System.out.println("레드팀 전체 체력" + redTeam.getTotalHp());
         System.out.println("블루팀 전체 체력" + blueTeam.getTotalHp());
+
+        Battle.oneVsOne(redTeam, blueTeam);
+        Battle.oneVsOne(redTeam, blueTeam);
+        Battle.oneVsOne(redTeam, blueTeam);
+
+        System.out.println("레드팀 전체 체력" + redTeam.getTotalHp());
+        System.out.println("블루팀 전체 체력" + blueTeam.getTotalHp());
     }
 }
