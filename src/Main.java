@@ -5,24 +5,20 @@ public class Main {
         Animal eagle = new Eagle("독수리", 80, 15, 80);
         Animal turtle = new Turtle("거북이", 150, 10, 10);
 
-        lion.doAAction();
-        eagle.doEAction();
-        turtle.doRAction();
+        AnimalPool animalPool = new AnimalPool();
+        animalPool.addAnimal(lion);
+        animalPool.addAnimal(eagle);
+        animalPool.addAnimal(turtle);
 
-        System.out.println("=== 전투 시작 ===");
+        Team<Animal> redTeam = new Team<>("레드");
+        Team<Animal> blueTeam = new Team<>("블루");
 
-        lion.attack(eagle);
-        eagle.attack(turtle);
-        turtle.attack(lion);
+        redTeam.addMember(animalPool.getAnimal("사자"));
 
-        ((Lion) lion).biteStrongly(eagle);
-        ((Eagle) eagle).diveAttack(turtle);
-        ((Turtle) turtle).hidingInTheShell(lion);
+        blueTeam.addMember(animalPool.getAnimal("독수리"));
+        blueTeam.addMember(animalPool.getAnimal("거북이"));
 
-        System.out.println("전투 종료");
-
-        System.out.println(lion);
-        System.out.println(eagle);
-        System.out.println(turtle);
+        System.out.println("레드팀 전체 체력" + redTeam.getTotalHp());
+        System.out.println("블루팀 전체 체력" + blueTeam.getTotalHp());
     }
 }
